@@ -30,10 +30,98 @@ $ git rm --cached
 ls -al
 Cada commit es una nueva versión del archivo
 #Configurar username y mail en git antes
-$ git config --global user.name "Nelson Lopez"
-$ git config --global user.email "nelson.lopezchirinos@gmail.com"
+$ git config --global user.name ""
+$ git config --global user.email ""
 
 
-aster 
-Development
-Hot fix
+# Commit sin comentario
+CTrl despues i  para insertar
+para salir del editor se aprieta esc - shift - z - z
+
+# comparar versiones
+$ git Diff "se agrega los dos identificadores de commit que deseamos comparar"
+
+# Volver Versiones
+$ git reset "Commit identificador" --hard (Cambia todo en duro)
+$ git reset "Commit identificador" --Soft (deja el ultimo add para commit)
+
+# Volver versión pero sin guardarán
+$ git checkout "indicador commit" "archivo"
+Se tiene que hacer un commit para que se pueda almacenar en el master
+
+# Traer de repositorio remoto a master local
+$ git fetch archivo
+
+# Traer de remoto a master y repositorio local
+$ git pull
+
+#Crear una branch (rama) dentro del master
+$ git branch "Nombre"
+
+#moverse a otra rama 
+$ git Checkout "nombre de rama"
+
+# commit con ADD incluido
+$ git commit -am "comentario"
+
+#Chequear ram as creadas
+$ git Branch
+
+#añadir un origen remoto "link del repositorio de git que me da"
+$ git remote add origin url
+#añadir url ssh
+$ git remote set-url origin url
+
+#Verificar origen remotos 
+$ git remote -v
+
+#mandar push al origen remoto
+$ git push origin master
+
+#traer cambios del master remoto
+$ git pull origin master (--allow-unrelated-histories)}
+
+
+#Llaves y certificados! IMPORTANTE
+$ ssh-keygen -t rsa -b 4096 -C "Email"
+Enter
+Password con espacios
+
+#Comprobar proceso 
+eval $(ssh-agent - s)
+eval "$(ssh-agent)"
+
+#Agregar llave
+ssh-add ~/.ssh/id_rsa 
+
+# mostrar ramas
+$ git show-branch --all
+
+# mostrar ramas visualmente
+$ gitk
+
+# clonar url de github para ver repositorios publico
+$ git clone url
+
+Al entrar en un nuevo repositorio se debe hacer git push para traer todo actualizado del repo (ramas) lluego ver con que rama vamos a trabajar. 
+
+git stash
+El comando git stash guarda el trabajo actual del Staging en una lista diseñada para ser temporal llamada Stash, para que pueda ser recuperado en el futuro.
+
+Para agregar los cambios al stash se utiliza el comando:
+
+A veces hacemos un commit, pero resulta que no queríamos mandarlo porque faltaba algo más. Utilizamos git commit --amend, amend en inglés es remendar y lo que hará es que los cambios que hicimos nos los agregará al commit anterior
+
+¿Qué pasa cuando todo se rompe y no sabemos qué está pasando? Con git reset HashDelHEAD nos devolveremos al estado en que el proyecto funcionaba.
+
+git reset --soft HashDelHEAD te mantiene lo que tengas en staging ahí.
+git reset --hard HashDelHEAD resetea absolutamente todo incluyendo lo que tengas en staging.
+
+git shortlog -sn = muestra cuantos commit han hecho cada miembros del equipo.
+git shortlog -sn --all = muestra cuantos commit han hecho cada miembros del equipo hasta los que han sido eliminado
+git shortlog -sn --all --no-merge = muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges
+git blame ARCHIVO = muestra quien hizo cada cosa linea por linea
+git COMANDO --help = muestra como funciona el comando.
+git blame ARCHIVO -Llinea_inicial,linea_final= muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,50
+**git branch -r **= se muestran todas las ramas remotas
+git branch -a = se muestran todas las ramas tanto locales como remotas
