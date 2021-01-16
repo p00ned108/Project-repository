@@ -1,0 +1,39 @@
+Comandos para GIT  
+
+# Para iniciar sesion en la carpeta donde se guardarán los cambios
+$ git init 
+# Agregar archivo
+$ git add "Archivo"
+# Agregar comentario a el archivo
+$ git commit -m "comentario"
+
+
+#Status de los archivos y cambios
+$ git status
+
+# Log de archivos
+$ git log "nombre de archivo"
+
+# Enviar a repositorios remotos GIT
+$ git push
+
+# Ver los cambios de un archivo 
+$ git show "nombre de archivo"
+
+# Traerte cambios del repositorio master
+$ git checkout
+
+# Borrar archivos del ADD (Cache)   
+$ git rm --cached
+
+# Ver archivos ocultos Open ssl
+ls -al
+Cada commit es una nueva versión del archivo
+#Configurar username y mail en git antes
+$ git config --global user.name "Nelson Lopez"
+$ git config --global user.email "nelson.lopezchirinos@gmail.com"
+
+
+aster 
+Development
+Hot fix
